@@ -1,0 +1,7 @@
+C:\Users\Noler\Git\13519135_Makalah\src\Makalah\Makalah\bin\Debug\Makalah.exe.config
+C:\Users\Noler\Git\13519135_Makalah\src\Makalah\Makalah\bin\Debug\Makalah.exe
+C:\Users\Noler\Git\13519135_Makalah\src\Makalah\Makalah\bin\Debug\Makalah.pdb
+C:\Users\Noler\Git\13519135_Makalah\src\Makalah\Makalah\obj\Debug\Makalah.csprojAssemblyReference.cache
+C:\Users\Noler\Git\13519135_Makalah\src\Makalah\Makalah\obj\Debug\Makalah.csproj.CoreCompileInputs.cache
+C:\Users\Noler\Git\13519135_Makalah\src\Makalah\Makalah\obj\Debug\Makalah.exe
+C:\Users\Noler\Git\13519135_Makalah\src\Makalah\Makalah\obj\Debug\Makalah.pdb
