@@ -53,7 +53,7 @@ namespace Makalah
             Random rand = new Random();
             int number;
             int size = (this.nodes.Count / 2) + 1;
-            if (size > 7) size = 7;
+            if (size > 10) size = 10;
             for (int i = 0; i < size; i++)
             {
                 do {
@@ -65,14 +65,6 @@ namespace Makalah
             foreach (int index in randomized) toReturn.Add(copy[index]);
             Console.WriteLine("Randomized selected nodes:");
             foreach (var node in toReturn) node.Print();
-            //foreach (var node in toReturn) // TEST
-            //{
-            //    node.PrintInfo();
-            //}
-            //foreach (var v in randomized) // TEST
-            //{
-            //    Console.WriteLine(v);
-            //}
             return toReturn;
         }
         public void AStar(string from, string to)
@@ -92,11 +84,11 @@ namespace Makalah
                 PQueue.RemoveAt(0); // Popping Head
                 if (Head.Item1.Count == 5) // Shortest Path
                 {
-                    Console.WriteLine("Connection path yang ditemukan adalah");
+                    Console.WriteLine("Found path connection:");
                     for (int i = 0; i < 5; i++)
                     {
                         Console.Write(Head.Item1[i].GetName());
-                        if (i != 4) Console.Write(" → ");
+                        if (i != 4) Console.Write(" ←→ ");
                         else Console.WriteLine(".");
                     }
                     Console.WriteLine("Cost: " + Head.Item2);

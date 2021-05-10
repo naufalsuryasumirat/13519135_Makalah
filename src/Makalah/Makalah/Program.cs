@@ -27,6 +27,7 @@ namespace Makalah
             FileHandler file = new FileHandler("../../../../../test/connections.txt");
             Graph graph = file.GetGraph();
             // graph.PrintInfo();
+            graph.AStar("Indonesia", "Singapore");
         }
     }
 }
