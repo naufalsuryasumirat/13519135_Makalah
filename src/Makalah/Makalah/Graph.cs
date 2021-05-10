@@ -128,5 +128,19 @@ namespace Makalah
             }
             return;
         }
+        public void AStarRand()
+        {
+            Random rand = new Random();
+            List<int> rando = new List<int>();
+            int number;
+            for (int i = 0; i < 2; i++)
+            {
+                do {
+                    number = rand.Next(0, this.nodes.Count);
+                } while (rando.Contains(number));
+                rando.Add(number);
+            }
+            this.AStar(this.nodes[rando[0]].GetName(), this.nodes[rando[1]].GetName());
+        }
     }
 }
