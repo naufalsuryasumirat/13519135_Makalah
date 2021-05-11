@@ -91,7 +91,7 @@ namespace Makalah
                         if (i != 4) Console.Write(" ←→ ");
                         else Console.WriteLine(".");
                     }
-                    Console.WriteLine("Cost: " + Head.Item2);
+                    Console.WriteLine("Cost/Ping: " + Head.Item2 + " ms");
                     PQueue.Clear();
                     return;
                 }
@@ -105,23 +105,14 @@ namespace Makalah
                     }
                     else
                     {
-                        var leastPing = new Tuple<Node, double>(null, 0.0);
                         foreach (var node in selected)
                         {
                             if (Head.Item1.Contains(node)) continue; // Already in path, continue
-                            if (leastPing.Item1 == null)
-                            {
-                                leastPing = new Tuple<Node, double>(node, Head.Item1.Last().CalcPing(node));
-                            }
-                            else
-                            {
-                                var ping = Head.Item1.Last().CalcPing(node);
-                                if (ping < leastPing.Item2) leastPing = new Tuple<Node, double>(node, ping);
-                            }
+                            List<Node> toAdd = new List<Node>(Head.Item1) { node };
+                            var ping = Head.Item1.Last().CalcPing(node);
+                            PQueue.Add(new Tuple<List<Node>, double, double>
+                                (toAdd, Head.Item2 + ping, Head.Item2 + ping + node.CalcPing(GoalNode)));
                         }
-                        List<Node> toAdd = new List<Node>(Head.Item1) { leastPing.Item1 };
-                        PQueue.Add(new Tuple<List<Node>, double, double>
-                            (toAdd, Head.Item2 + leastPing.Item2, Head.Item2 + leastPing.Item2 + Head.Item1.Last().CalcPing(GoalNode)));
                     }
                     PQueue.Sort((x, y) => x.Item3.CompareTo(y.Item3));
                 }
