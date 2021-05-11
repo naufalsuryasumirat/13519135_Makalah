@@ -26,19 +26,19 @@ namespace Makalah
             this.Name = name;
             this.Coordinate = new Tuple<double, double>(latitude, longitude);
         }
-        public string GetName()
+        public string GetName() // Getter Name (string)
         {
             return this.Name;
         }
-        public double GetLatitude()
+        public double GetLatitude() // Getter Latitude (double)
         {
             return this.Coordinate.Item1;
         }
-        public double GetLongitude()
+        public double GetLongitude() // Getter Longitude (double)
         {
             return this.Coordinate.Item2;
         }
-        public double CalcPing(Node other)
+        public double CalcPing(Node other) // Calculates Ping between nodes
         {
             // Referensi: https://moveable-type.co.uk/scripts/latlong.html
             double radius = 6371000;
